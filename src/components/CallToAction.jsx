@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export const CallToAction = () => {
   const container = {
@@ -16,7 +17,9 @@ export const CallToAction = () => {
     borderRadius: "5px",
     border: "none",
     width: "200px",
-    height: "60px",
+    textDecoration:"none",
+    textAlign:"center",
+    padding:"20px 0px"
   };
 
   return (
@@ -47,13 +50,15 @@ export const CallToAction = () => {
           accusantium, saepe quia aut eos in? Laboriosam aspernatur sit tenetur
           ullam animi..
         </p>
-        <button
+        <Link
           style={button}
           tabindex="0"
           data-message="button to reservate a table"
+          to="/booking"
+          
         >
           Reserve a Table
-        </button>
+        </Link>
       </div>
       <img
         style={{ width: "375px", height: "325px", objectFit: "cover" }}
