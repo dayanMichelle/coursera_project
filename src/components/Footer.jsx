@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
   const ul ={
@@ -13,24 +14,24 @@ export const Footer = () => {
       <nav style={{display:"flex", flexDirection:"row", flexWrap:"wrap", justifyContent:"space-between", }}>
        <ul style={ul}>
         <p>Doormat Navegation</p>
-          <li><a style={a} href="">Home</a></li>
-          <li><a style={a} href="">About</a></li>
-          <li><a style={a} href="">Menu</a></li>
-          <li><a style={a} href="">Reservations</a></li>
-          <li><a style={a} href="">Order Online</a></li>
-          <li><a style={a} href="">Login</a></li>
+          <li><Link to="/" style={a} href="">Home</Link></li>
+          <li><Link to="/about" style={a} href="">About</Link></li>
+          <li><Link to="/menu" style={a} href="">Menu</Link></li>
+          <li><Link to="/booking" style={a} href="">Reservations</Link></li>
+          <li><Link style={a} href="">Order Online</Link></li>
+          <li><Link style={a} href="">Login</Link></li>
        </ul>
        <ul style={ul}>
         <p>Contact</p>
-          <li><a style={a} href="">Adress</a></li>
-          <li><a style={a} href="">Phone Number</a></li>
-          <li><a style={a} href="">Email</a></li>
+          <li><Link style={a} href="">Adress</Link></li>
+          <li><Link style={a} href="">Phone Number</Link></li>
+          <li><Link style={a} href="">Email</Link></li>
        </ul>
        <ul  style={ul}>
         <p>Social Media Links</p>
-          <li><a style={a} href="">Adress</a></li>
-          <li><a style={a} href="">Phone Number</a></li>
-          <li><a style={a} href="">Email</a></li>
+          <li><Link style={a} href="">Adress</Link></li>
+          <li><Link style={a} href="">Phone Number</Link></li>
+          <li><Link style={a} href="">Email</Link></li>
        </ul>
       </nav>
     </footer>

@@ -1,15 +1,20 @@
 import React, { useState } from "react";
 import "./booking.css";
-export const BookingForm = ({ availableTimes, dispatch }) => {
+export const BookingForm = ({ availableTimes, dispatch,submitForm,setReservate }) => {
   const [date, setDate] = useState("");
   const [selectedTime, setSelectedTime] = useState("");
   const [nGuests, setNGestst] = useState("");
   const [occasion, setOccasion] = useState("");
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    submitForm(date,selectedTime, nGuests, occasion)
+    setReservate(true)
+  }
   return (
     <>
     <h4 className="title">Reservate a Table</h4>
-      <form style={{ display: "grid", maxWidth: "200px", gap: "20px" }}>
+      <form onSubmit={handleSubmit} style={{ display: "grid", maxWidth: "200px", gap: "20px" }}>
         <label htmlFor="res-date">Choose date *</label>
         <input
           value={date}

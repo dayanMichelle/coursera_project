@@ -1,10 +1,13 @@
-export const initializeTimes =["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+import { fetchAPI } from "../../apis";
 
+export const initializeTimes = fetchAPI(new Date());
 
 export function updateTimes(state, action) {
   switch (action.type) {
     case "AVAILABLE_TIMES":
-      return state;
+      const newDate = new Date(action.payload);
+      const newTimes = fetchAPI(newDate);
+      return newTimes;
     default:
       return state;
   }
