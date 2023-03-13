@@ -65,6 +65,7 @@ export const BookingForm = ({
               max="10"
               id="guests"
             />
+            {nGuests <= 0 || nGuests > 10 ? (<span style={{color:'red', fontSize:"12px"}}>Enter a number between 1 and 10</span>):''}
             <label htmlFor="occasion">Occasion *</label>
             <select
               value={occasion}
