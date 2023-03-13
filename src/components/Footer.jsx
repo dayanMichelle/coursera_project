@@ -10,7 +10,7 @@ export const Footer = () => {
   }
   return (
     <footer style={{display:"flex",flexDirection:"row", backgroundColor:"rgba(0,0,0,0.3)", justifyContent:"center", gap:"50px"}}>
-      <img src="/Logo.svg" />
+      <img src="/Logo.svg" alt="logo of little lemmon" />
       <nav style={{display:"flex", flexDirection:"row", flexWrap:"wrap", justifyContent:"space-between", }}>
        <ul style={ul}>
         <p>Doormat Navegation</p>

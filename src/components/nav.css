@@ -1,0 +1,15 @@
+.active {
+  background-color: #495e57;
+}
+.link {
+  text-decoration: none;
+  color: black;
+  margin: 0px 20px;
+}
+.link:hover {
+  text-decoration: underline;
+}
+.active > .link {
+    color: white;
+    font-weight: bold;
+}

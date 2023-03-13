@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import './calltoaction.css'
 
 export const CallToAction = () => {
   const container = {
@@ -52,6 +53,7 @@ export const CallToAction = () => {
         </p>
         <Link
           style={button}
+          className="reserve"
           tabindex="0"
           data-message="button to reservate a table"
           to="/booking"

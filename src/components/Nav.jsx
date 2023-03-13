@@ -1,26 +1,34 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-
+import './nav.css'
 export const Nav = () => {
+  const [activeLink, setActiveLink] = useState(0);
   const container = {
     display:"flex",
     listStyle:"none",
     flexWrap:"wrap"
   }
-  const links = {
-    textDecoration:"none",
-    color:"black",
-    margin:"0 20px"
-  }
+ 
+  const listOptions = [
+    { text: "Home", route: "/" },
+    { text: "About", route: "/about" },
+    { text: "Menu", route: "/menu" },
+    { text: "Reservations", route: "/booking" },
+    { text: "Order Online", route: "/order" },
+    { text: "Login", route: "/login" }
+  ];
+
   return (
-    <nav>
+    <nav className='navbar'>
      <ul style={container}>
-      <li><Link style={links} to="/">Home</Link></li>
-      <li><Link style={links} to="/about">About</Link></li>
-      <li><Link style={links} to="/menu">Menu</Link></li>
-      <li><Link style={links} to="/booking">Reservations</Link></li>
-      <li><Link style={links} to="/order">Order Online</Link></li>
-      <li><Link style={links} to="/login">Login</Link></li>
+     {listOptions.map((li, index) => (
+      <li 
+      onClick={() => setActiveLink(index)}
+      className={`${
+        activeLink === index ? "active" : ""
+      }`}
+      key={li.text}><Link  className='link' to={li.route}>{li.text}</Link></li>
+     ))}
      </ul>
     </nav>
   )

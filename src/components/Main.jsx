@@ -8,8 +8,8 @@ import { Menu } from "./Menu";
 
 
 export const Main = () => {
-  const submitForm = (formData) => {
-    submitAPI (formData)
+  const submitForm = async (formData) => {
+    await submitAPI (formData)
   }
   return (
     <>

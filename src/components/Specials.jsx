@@ -40,7 +40,7 @@ export const Specials = () => {
         <h4 style={{ fontSize: "40px", fontWeight: "bold" }}>
           This weeks specials!
         </h4>
-        <Link to="/menu" style={button}>
+        <Link className="reserve" to="/menu" style={button}>
           <p>Online Menu</p>
         </Link>
       </div>
@@ -128,6 +128,7 @@ export const Specials = () => {
               margin: "15px 20px",
               fontWeight: "500",
             }}
+            
           >
             Order a delivery
           </span>
