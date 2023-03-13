@@ -1,20 +1,30 @@
 import React, { useState } from "react";
 import "./booking.css";
-export const BookingForm = ({ availableTimes, dispatch,submitForm,setReservate }) => {
+
+export const BookingForm = ({
+  availableTimes,
+  dispatch,
+  submitForm,
+  setReservate,
+}) => {
   const [date, setDate] = useState("");
   const [selectedTime, setSelectedTime] = useState("");
-  const [nGuests, setNGestst] = useState("");
+  const [nGuests, setNGuests] = useState("");
   const [occasion, setOccasion] = useState("");
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    submitForm(date,selectedTime, nGuests, occasion)
-    setReservate(true)
-  }
+    e.preventDefault();
+    submitForm(date, selectedTime, nGuests, occasion);
+    setReservate(true);
+  };
+
   return (
     <>
-    <h4 className="title">Reservate a Table</h4>
-      <form onSubmit={handleSubmit} style={{ display: "grid", maxWidth: "200px", gap: "20px" }}>
+      <h4 className="title">Reservate a Table</h4>
+      <form
+        onSubmit={handleSubmit}
+        style={{ display: "grid", maxWidth: "200px", gap: "20px" }}
+      >
         <label htmlFor="res-date">Choose date *</label>
         <input
           value={date}
@@ -24,6 +34,7 @@ export const BookingForm = ({ availableTimes, dispatch,submitForm,setReservate }
           }}
           type="date"
           id="res-date"
+          data-testid="res-date"
         />
         <label htmlFor="res-time">Choose time *</label>
         <select
@@ -31,16 +42,18 @@ export const BookingForm = ({ availableTimes, dispatch,submitForm,setReservate }
           onChange={(e) => {
             setSelectedTime(e.target.value);
           }}
-          id="res-time "
+          id="res-time"
+          data-testid="res-time"
         >
+          <option>-- select --</option>
           {availableTimes.map((t) => (
-            <option>{t}</option>
+            <option key={t}>{t}</option>
           ))}
         </select>
         <label htmlFor="guests">Number of guests *</label>
         <input
           value={nGuests}
-          onChange={(e) => setNGestst(e.target.value)}
+          onChange={(e) => setNGuests(e.target.value)}
           type="number"
           placeholder="1"
           min="1"
@@ -52,11 +65,19 @@ export const BookingForm = ({ availableTimes, dispatch,submitForm,setReservate }
           value={occasion}
           onChange={(e) => setOccasion(e.target.value)}
           id="occasion"
+          data-testid="res-occasion"
         >
+          <option>-- select --</option>
           <option>Birthday</option>
           <option>Anniversary</option>
         </select>
-        <input type="submit" value="Make Your reservation" />
+        <input
+          disabled={
+            date === "" || selectedTime === "" || nGuests === "" || nGuests <= 0 ||nGuests > 10  || occasion === ""
+          }
+          type="submit"
+          value="Make Your reservation"
+        />
       </form>
     </>
   );

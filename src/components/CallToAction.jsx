@@ -55,6 +55,7 @@ export const CallToAction = () => {
           tabindex="0"
           data-message="button to reservate a table"
           to="/booking"
+          aria-label="On Click"
           
         >
           Reserve a Table

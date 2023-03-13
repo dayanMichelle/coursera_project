@@ -30,3 +30,7 @@ form {
   form > input[type="submit"]:hover{
     cursor: pointer;
   }
+  form > input[type="submit"]:disabled {
+    background-color: #d6d4d4;
+    cursor: not-allowed;
+  }
